@@ -16,12 +16,14 @@
     </tr>
 </table>
 
-{% if post.language %}
+{% if post.language and post.language != g.locale%}
 <br><br>
 <span id= "translation{{ post.id }}">
 <a href="javascript:translate(
     '#post{{ post.id }}',
     '#translation{{ post.id }}',
-    '{{ post.language }}');">{{ 'Translate' }}</a>
+    '{{ post.language }}',
+    '{{ g.locale }}');">
+    {{ 'Translate' }}</a>
 </span>
 {% endif %}

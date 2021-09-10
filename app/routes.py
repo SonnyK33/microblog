@@ -1,4 +1,4 @@
-from flask import render_template, flash, redirect, url_for, request, jsonify
+from flask import render_template, flash, redirect, url_for, request, jsonify, g
 from flask_migrate import current
 from wtforms.form import Form
 from app import app, db
@@ -10,6 +10,10 @@ from datetime import datetime
 from app.email import send_password_reset_email
 from langdetect import detect, LangDetectException
 from app.translate import translate
+from flask_babel import get_locale
+
+
+
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -101,6 +105,7 @@ def before_request():
     if current_user.is_authenticated:
         current_user.last_seen = datetime.utcnow()
         db.session.commit()
+    g.locale = str(get_locale())
 
 @app.route('/edit_profile', methods=['GET', 'POST'])
 @login_required
@@ -202,7 +207,7 @@ def reset_password(token):
 def translate_text():
     return jsonify({'text':translate(request.form['text'],request.form['source_language'],
     request.form['dest_language'])})
-    
+
 
 
 
