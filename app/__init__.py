@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, current_app
 from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -12,18 +12,18 @@ from flask_moment import Moment
 from flask_babel import Babel
 from flask import request
 
-app = Flask(__name__)
-app.config.from_object(Config)
-app.config['TESTING'] = False
+# app = Flask(__name__)
+# app.config.from_object(Config)
+# app.config['TESTING'] = False
 
-db = SQLAlchemy(app)
-migrate = Migrate(app, db)
-login = LoginManager(app)
-login.login_view = 'login'
-mail = Mail(app)
-bootstrap = Bootstrap(app)
-moment = Moment(app)
-babel = Babel(app)
+db = SQLAlchemy()
+migrate = Migrate()
+login = LoginManager()
+login.login_view = 'auth.login'
+mail = Mail()
+bootstrap = Bootstrap()
+moment = Moment()
+babel = Babel()
 
 def create_app(config_class=Config):
 
@@ -44,7 +44,12 @@ def create_app(config_class=Config):
     from app.auth import bp as auth_bp
     app.register_blueprint(auth_bp, url_prefix='/auth')
 
-    if not app.debug:
+    from app.main import bp as main_bp
+    app.register_blueprint(main_bp)
+
+
+
+    if not app.debug and not app.testing:
         if app.config['MAIL_SERVER']:
             auth = None
             if app.config['MAIL_USERNAME'] or app.config['MAIL_PASSWORD']:
@@ -75,9 +80,9 @@ def create_app(config_class=Config):
 
 @babel.localeselector
 def get_locale():
-    return request.accept_languages.best_match(app.config['LANGUAGES'])
+    return request.accept_languages.best_match(current_app.config['LANGUAGES'])
 
 
-from app import routes, models
+from app import models
 
 

@@ -1,4 +1,4 @@
-2021-08-22 15:55:28,282 ERROR: Exception on /user/Sonny [GET] [in C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py:1454]
+2021-08-22 15:40:38,590 ERROR: Exception on /user/SonnyK [GET] [in C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py:1454]
 Traceback (most recent call last):
   File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 2070, in wsgi_app
     response = self.full_dispatch_request()
@@ -29,7 +29,7 @@ Traceback (most recent call last):
   File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\jinja2\environment.py", line 474, in getattr
     return getattr(obj, attribute)
 jinja2.exceptions.UndefinedError: 'username' is undefined
-2021-08-22 19:14:45,909 ERROR: Exception on /user/Sonny [GET] [in C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py:1454]
+2021-08-22 15:41:57,136 ERROR: Exception on /user/Sonny2 [GET] [in C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py:1454]
 Traceback (most recent call last):
   File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 2070, in wsgi_app
     response = self.full_dispatch_request()
@@ -60,7 +60,7 @@ Traceback (most recent call last):
   File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\jinja2\environment.py", line 474, in getattr
     return getattr(obj, attribute)
 jinja2.exceptions.UndefinedError: 'username' is undefined
-2021-08-22 19:15:42,173 ERROR: Exception on /user/Sonny2 [GET] [in C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py:1454]
+2021-08-22 15:54:43,607 ERROR: Exception on /user/Sonny2 [GET] [in C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py:1454]
 Traceback (most recent call last):
   File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 2070, in wsgi_app
     response = self.full_dispatch_request()
@@ -91,6 +91,3 @@ Traceback (most recent call last):
   File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\jinja2\environment.py", line 474, in getattr
     return getattr(obj, attribute)
 jinja2.exceptions.UndefinedError: 'username' is undefined
-2021-08-22 19:16:51,697 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:44]
-2021-08-23 12:02:38,018 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:44]
-2021-08-23 21:54:54,579 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:44]
