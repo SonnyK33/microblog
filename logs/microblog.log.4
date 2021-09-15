@@ -1,4 +1,4 @@
-2021-08-26 20:58:28,731 ERROR: Exception on / [GET] [in C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py:1454]
+2021-09-13 23:08:40,816 ERROR: Exception on / [GET] [in C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py:1454]
 Traceback (most recent call last):
   File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 2070, in wsgi_app
     response = self.full_dispatch_request()
@@ -10,39 +10,11 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
   File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\routes.py", line 33, in index
-    return render_template('index.html',title='Home',form=form, posts=posts.items, next_url=next_url,prev_url=prev_url)
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\templating.py", line 147, in render_template
-    return _render(
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\templating.py", line 128, in _render
-    rv = template.render(context)
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\jinja2\environment.py", line 1304, in render
-    self.environment.handle_exception()
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\jinja2\environment.py", line 925, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\templates\index.html", line 2, in top-level template code
-    {% import 'bootstrap/wtf.html' as wtf %}
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\templates\base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block 'doc'
-    {%- block html %}
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block 'html'
-    {% block body -%}
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block 'body'
-    {% block content -%}
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\templates\base.html", line 55, in block 'content'
-    {% block app_content %}{% endblock %}
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\templates\index.html", line 24, in block 'app_content'
-    {% include '_post.html' %}
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\templates\_post.html", line 13, in top-level template code
-    said: {{ moment(post.timestamp).fromNow() }}: <br>
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\jinja2\utils.py", line 84, in from_obj
-    if hasattr(obj, "jinja_pass_arg"):
-jinja2.exceptions.UndefinedError: 'moment' is undefined
-2021-08-26 21:01:44,162 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:50]
-2021-08-26 21:01:45,694 ERROR: Exception on / [GET] [in C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py:1454]
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\main\routes.py", line 42, in index
+    posts = current_user.followed_posts().paginate(page,app.config['POSTS_PER_PAGE'],False)
+NameError: name 'app' is not defined
+2021-09-13 23:09:56,835 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:76]
+2021-09-13 23:10:03,302 ERROR: Exception on /explore [GET] [in C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py:1454]
 Traceback (most recent call last):
   File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 2070, in wsgi_app
     response = self.full_dispatch_request()
@@ -54,34 +26,87 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
   File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\routes.py", line 33, in index
-    return render_template('index.html',title='Home',form=form, posts=posts.items, next_url=next_url,prev_url=prev_url)
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\templating.py", line 147, in render_template
-    return _render(
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\templating.py", line 128, in _render
-    rv = template.render(context)
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\jinja2\environment.py", line 1304, in render
-    self.environment.handle_exception()
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\jinja2\environment.py", line 925, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\templates\index.html", line 2, in top-level template code
-    {% import 'bootstrap/wtf.html' as wtf %}
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\templates\base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block 'doc'
-    {%- block html %}
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block 'html'
-    {% block body -%}
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block 'body'
-    {% block content -%}
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\templates\base.html", line 55, in block 'content'
-    {% block app_content %}{% endblock %}
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\templates\index.html", line 24, in block 'app_content'
-    {% include '_post.html' %}
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\templates\_post.html", line 13, in top-level template code
-    said: {{ moment(post.timestamp).fromNow() }}: <br>
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\jinja2\utils.py", line 84, in from_obj
-    if hasattr(obj, "jinja_pass_arg"):
-jinja2.exceptions.UndefinedError: 'moment' is undefined
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\main\routes.py", line 54, in explore
+    posts = Post.query.order_by(Post.timestamp.desc()).paginate(page,app.config['POSTS_PER_PAGE'],False)
+NameError: name 'app' is not defined
+2021-09-13 23:11:20,812 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:76]
+2021-09-13 23:11:23,792 ERROR: Exception on /explore [GET] [in C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\main\routes.py", line 56, in explore
+    next_url = url_for('explore',page=posts.next_num) if posts.has_next else None
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\helpers.py", line 338, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\helpers.py", line 325, in url_for
+    rv = url_adapter.build(
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\werkzeug\routing.py", line 2305, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'explore' with values ['page']. Did you mean 'main.explore' instead?
+2021-09-13 23:15:25,996 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:76]
+2021-09-13 23:15:29,025 ERROR: Exception on /explore [GET] [in C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\main\routes.py", line 56, in explore
+    next_url = url_for('explore',page=posts.next_num) if posts.has_next else None
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\helpers.py", line 338, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\helpers.py", line 325, in url_for
+    rv = url_adapter.build(
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\werkzeug\routing.py", line 2305, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'explore' with values ['page']. Did you mean 'main.explore' instead?
+2021-09-13 23:16:12,047 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:76]
+2021-09-13 23:16:20,144 ERROR: Exception on /translate [POST] [in C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\main\routes.py", line 129, in translate_text
+    return jsonify({'text':translate(request.form['text'],request.form['source_language'],
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\translate.py", line 6, in translate
+    if 'MS_TRANSLATOR_KEY' not in app.config:
+NameError: name 'app' is not defined
+2021-09-13 23:17:52,176 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:76]
+2021-09-13 23:17:56,373 ERROR: Exception on /translate [POST] [in C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\main\routes.py", line 129, in translate_text
+    return jsonify({'text':translate(request.form['text'],request.form['source_language'],
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\translate.py", line 6, in translate
+    if 'MS_TRANSLATOR_KEY' not in app.config:
+NameError: name 'app' is not defined
+2021-09-13 23:18:24,799 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:76]

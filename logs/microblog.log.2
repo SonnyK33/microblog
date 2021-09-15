@@ -1,16 +1,48 @@
-2021-09-07 22:56:44,780 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:56]
-2021-09-07 22:57:29,281 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:56]
-2021-09-07 22:59:44,855 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:56]
-2021-09-08 20:43:56,479 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:56]
-2021-09-08 20:44:34,758 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:56]
-2021-09-08 20:50:09,932 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:56]
-2021-09-08 20:50:36,668 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:56]
-2021-09-08 20:51:33,351 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:56]
-2021-09-08 20:51:51,098 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:56]
-2021-09-08 21:52:02,699 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:56]
-2021-09-08 21:53:09,775 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:56]
-2021-09-08 22:29:19,049 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:56]
-2021-09-08 22:29:22,859 ERROR: Exception on / [GET] [in C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py:1454]
+2021-09-14 22:38:56,321 ERROR: Exception on /search [GET] [in C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\urllib3\util\connection.py", line 96, in create_connection
+    raise err
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\urllib3\util\connection.py", line 86, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 251, in perform_request
+    response = self.pool.urlopen(
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\urllib3\connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\urllib3\util\retry.py", line 507, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\urllib3\packages\six.py", line 770, in reraise
+    raise value
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\urllib3\connectionpool.py", line 699, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\urllib3\connectionpool.py", line 394, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\urllib3\connection.py", line 234, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\kushwaha\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1257, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\kushwaha\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1303, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\kushwaha\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1252, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\kushwaha\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1012, in _send_output
+    self.send(msg)
+  File "C:\Users\kushwaha\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 952, in send
+    self.connect()
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\urllib3\connection.py", line 200, in connect
+    conn = self._new_conn()
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\urllib3\connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x000001F3789B2430>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 2070, in wsgi_app
     response = self.full_dispatch_request()
@@ -22,85 +54,22 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
   File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\routes.py", line 40, in index
-    return render_template('index.html',title='Home',form=form, posts=posts.items, next_url=next_url,prev_url=prev_url)
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\templating.py", line 147, in render_template
-    return _render(
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\templating.py", line 128, in _render
-    rv = template.render(context)
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\jinja2\environment.py", line 1304, in render
-    self.environment.handle_exception()
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\jinja2\environment.py", line 925, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\templates\index.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\jinja2\environment.py", line 925, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\templates\base.html", line 73, in template
-    $(destElem).text("{{ 'Error: couldn't contact server' }}");
-jinja2.exceptions.TemplateSyntaxError: expected token 'end of print statement', got 't'
-2021-09-08 22:32:32,918 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:56]
-2021-09-08 22:35:21,869 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:56]
-2021-09-08 22:39:23,803 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:56]
-2021-09-08 22:47:07,667 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:56]
-2021-09-08 22:53:48,677 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:56]
-2021-09-08 22:59:33,531 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:56]
-2021-09-08 23:01:15,336 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:56]
-2021-09-08 23:02:10,047 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:56]
-2021-09-08 23:04:43,109 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:56]
-2021-09-09 20:38:43,413 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:56]
-2021-09-09 20:39:43,432 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:56]
-2021-09-09 20:47:45,699 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:56]
-2021-09-09 21:10:49,078 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:56]
-2021-09-09 21:10:52,162 ERROR: Exception on / [GET] [in C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py:1454]
-Traceback (most recent call last):
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 2070, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1511, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1857, in preprocess_request
-    rv = self.ensure_sync(func)()
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\routes.py", line 20, in before_request
-    g.locale = str(get_locale())
-NameError: name 'g' is not defined
-2021-09-09 21:11:33,029 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:56]
-2021-09-09 21:12:24,260 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:56]
-2021-09-13 23:03:17,943 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:76]
-2021-09-13 23:03:20,094 ERROR: Exception on / [GET] [in C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py:1454]
-Traceback (most recent call last):
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 2070, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1511, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1857, in preprocess_request
-    rv = self.ensure_sync(func)()
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\main\routes.py", line 20, in before_request
-    g.locale = str(get_locale())
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask_babel\__init__.py", line 226, in get_locale
-    rv = babel.locale_selector_func()
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py", line 83, in get_locale
-    return request.accept_languages.best_match(app.config['LANGUAGES'])
-NameError: name 'app' is not defined
-2021-09-13 23:07:19,902 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:76]
-2021-09-13 23:07:21,269 ERROR: Exception on / [GET] [in C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py:1454]
-Traceback (most recent call last):
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 2070, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1511, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1857, in preprocess_request
-    rv = self.ensure_sync(func)()
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\main\routes.py", line 20, in before_request
-    g.locale = str(get_locale())
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask_babel\__init__.py", line 226, in get_locale
-    rv = babel.locale_selector_func()
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py", line 83, in get_locale
-    return request.accept_languages.best_match(app.config['LANGUAGES'])
-NameError: name 'app' is not defined
-2021-09-13 23:08:39,510 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:76]
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\main\routes.py", line 21, in search
+    posts, total = Post.search(g.search_form.q.data, page,current_app.config['POSTS_PER_PAGE'])
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\models.py", line 15, in search
+    ids, total = query_index(cls.__tablename__, expression, page, per_page)
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\search.py", line 19, in query_index
+    search = current_app.elasticsearch.search(
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\elasticsearch\client\utils.py", line 168, in _wrapped
+    return func(*args, params=params, headers=headers, **kwargs)
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\elasticsearch\client\__init__.py", line 1668, in search
+    return self.transport.perform_request(
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\elasticsearch\transport.py", line 409, in perform_request
+    self._do_verify_elasticsearch(headers=headers, timeout=timeout)
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\elasticsearch\transport.py", line 598, in _do_verify_elasticsearch
+    raise error
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\elasticsearch\transport.py", line 561, in _do_verify_elasticsearch
+    _, info_headers, info_response = conn.perform_request(
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 266, in perform_request
+    raise ConnectionError("N/A", str(e), e)
+elasticsearch.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HTTPConnection object at 0x000001F3789B2430>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it) caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x000001F3789B2430>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it)
