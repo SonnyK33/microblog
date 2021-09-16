@@ -1,4 +1,48 @@
-2021-09-13 23:08:40,816 ERROR: Exception on / [GET] [in C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py:1454]
+2021-09-14 22:38:56,321 ERROR: Exception on /search [GET] [in C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\urllib3\util\connection.py", line 96, in create_connection
+    raise err
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\urllib3\util\connection.py", line 86, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 251, in perform_request
+    response = self.pool.urlopen(
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\urllib3\connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\urllib3\util\retry.py", line 507, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\urllib3\packages\six.py", line 770, in reraise
+    raise value
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\urllib3\connectionpool.py", line 699, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\urllib3\connectionpool.py", line 394, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\urllib3\connection.py", line 234, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\kushwaha\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1257, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\kushwaha\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1303, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\kushwaha\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1252, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\kushwaha\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1012, in _send_output
+    self.send(msg)
+  File "C:\Users\kushwaha\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 952, in send
+    self.connect()
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\urllib3\connection.py", line 200, in connect
+    conn = self._new_conn()
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\urllib3\connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x000001F3789B2430>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 2070, in wsgi_app
     response = self.full_dispatch_request()
@@ -10,103 +54,22 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
   File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\main\routes.py", line 42, in index
-    posts = current_user.followed_posts().paginate(page,app.config['POSTS_PER_PAGE'],False)
-NameError: name 'app' is not defined
-2021-09-13 23:09:56,835 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:76]
-2021-09-13 23:10:03,302 ERROR: Exception on /explore [GET] [in C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py:1454]
-Traceback (most recent call last):
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 2070, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1499, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\main\routes.py", line 54, in explore
-    posts = Post.query.order_by(Post.timestamp.desc()).paginate(page,app.config['POSTS_PER_PAGE'],False)
-NameError: name 'app' is not defined
-2021-09-13 23:11:20,812 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:76]
-2021-09-13 23:11:23,792 ERROR: Exception on /explore [GET] [in C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py:1454]
-Traceback (most recent call last):
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 2070, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1499, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\main\routes.py", line 56, in explore
-    next_url = url_for('explore',page=posts.next_num) if posts.has_next else None
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\helpers.py", line 338, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\helpers.py", line 325, in url_for
-    rv = url_adapter.build(
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\werkzeug\routing.py", line 2305, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'explore' with values ['page']. Did you mean 'main.explore' instead?
-2021-09-13 23:15:25,996 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:76]
-2021-09-13 23:15:29,025 ERROR: Exception on /explore [GET] [in C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py:1454]
-Traceback (most recent call last):
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 2070, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1499, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\main\routes.py", line 56, in explore
-    next_url = url_for('explore',page=posts.next_num) if posts.has_next else None
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\helpers.py", line 338, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\helpers.py", line 325, in url_for
-    rv = url_adapter.build(
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\werkzeug\routing.py", line 2305, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'explore' with values ['page']. Did you mean 'main.explore' instead?
-2021-09-13 23:16:12,047 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:76]
-2021-09-13 23:16:20,144 ERROR: Exception on /translate [POST] [in C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py:1454]
-Traceback (most recent call last):
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 2070, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1499, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\main\routes.py", line 129, in translate_text
-    return jsonify({'text':translate(request.form['text'],request.form['source_language'],
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\translate.py", line 6, in translate
-    if 'MS_TRANSLATOR_KEY' not in app.config:
-NameError: name 'app' is not defined
-2021-09-13 23:17:52,176 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:76]
-2021-09-13 23:17:56,373 ERROR: Exception on /translate [POST] [in C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py:1454]
-Traceback (most recent call last):
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 2070, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1499, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\main\routes.py", line 129, in translate_text
-    return jsonify({'text':translate(request.form['text'],request.form['source_language'],
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\translate.py", line 6, in translate
-    if 'MS_TRANSLATOR_KEY' not in app.config:
-NameError: name 'app' is not defined
-2021-09-13 23:18:24,799 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:76]
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\main\routes.py", line 21, in search
+    posts, total = Post.search(g.search_form.q.data, page,current_app.config['POSTS_PER_PAGE'])
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\models.py", line 15, in search
+    ids, total = query_index(cls.__tablename__, expression, page, per_page)
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\search.py", line 19, in query_index
+    search = current_app.elasticsearch.search(
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\elasticsearch\client\utils.py", line 168, in _wrapped
+    return func(*args, params=params, headers=headers, **kwargs)
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\elasticsearch\client\__init__.py", line 1668, in search
+    return self.transport.perform_request(
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\elasticsearch\transport.py", line 409, in perform_request
+    self._do_verify_elasticsearch(headers=headers, timeout=timeout)
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\elasticsearch\transport.py", line 598, in _do_verify_elasticsearch
+    raise error
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\elasticsearch\transport.py", line 561, in _do_verify_elasticsearch
+    _, info_headers, info_response = conn.perform_request(
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 266, in perform_request
+    raise ConnectionError("N/A", str(e), e)
+elasticsearch.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HTTPConnection object at 0x000001F3789B2430>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it) caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x000001F3789B2430>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it)

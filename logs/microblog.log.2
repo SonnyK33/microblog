@@ -1,48 +1,4 @@
-2021-09-14 22:38:56,321 ERROR: Exception on /search [GET] [in C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py:1454]
-Traceback (most recent call last):
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
-    conn = connection.create_connection(
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\urllib3\util\connection.py", line 96, in create_connection
-    raise err
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\urllib3\util\connection.py", line 86, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 251, in perform_request
-    response = self.pool.urlopen(
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\urllib3\connectionpool.py", line 755, in urlopen
-    retries = retries.increment(
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\urllib3\util\retry.py", line 507, in increment
-    raise six.reraise(type(error), error, _stacktrace)
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\urllib3\packages\six.py", line 770, in reraise
-    raise value
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\urllib3\connectionpool.py", line 699, in urlopen
-    httplib_response = self._make_request(
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\urllib3\connectionpool.py", line 394, in _make_request
-    conn.request(method, url, **httplib_request_kw)
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\urllib3\connection.py", line 234, in request
-    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
-  File "C:\Users\kushwaha\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1257, in request
-    self._send_request(method, url, body, headers, encode_chunked)
-  File "C:\Users\kushwaha\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1303, in _send_request
-    self.endheaders(body, encode_chunked=encode_chunked)
-  File "C:\Users\kushwaha\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1252, in endheaders
-    self._send_output(message_body, encode_chunked=encode_chunked)
-  File "C:\Users\kushwaha\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1012, in _send_output
-    self.send(msg)
-  File "C:\Users\kushwaha\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 952, in send
-    self.connect()
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\urllib3\connection.py", line 200, in connect
-    conn = self._new_conn()
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\urllib3\connection.py", line 181, in _new_conn
-    raise NewConnectionError(
-urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x000001F3789B2430>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it
-
-During handling of the above exception, another exception occurred:
-
+2021-09-14 23:02:06,586 ERROR: Exception on /search [GET] [in C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py:1454]
 Traceback (most recent call last):
   File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 2070, in wsgi_app
     response = self.full_dispatch_request()
@@ -64,12 +20,77 @@ Traceback (most recent call last):
     return func(*args, params=params, headers=headers, **kwargs)
   File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\elasticsearch\client\__init__.py", line 1668, in search
     return self.transport.perform_request(
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\elasticsearch\transport.py", line 409, in perform_request
-    self._do_verify_elasticsearch(headers=headers, timeout=timeout)
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\elasticsearch\transport.py", line 598, in _do_verify_elasticsearch
-    raise error
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\elasticsearch\transport.py", line 561, in _do_verify_elasticsearch
-    _, info_headers, info_response = conn.perform_request(
-  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 266, in perform_request
-    raise ConnectionError("N/A", str(e), e)
-elasticsearch.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HTTPConnection object at 0x000001F3789B2430>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it) caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x000001F3789B2430>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it)
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\elasticsearch\transport.py", line 458, in perform_request
+    raise e
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\elasticsearch\transport.py", line 419, in perform_request
+    status, headers_response, data = connection.perform_request(
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 277, in perform_request
+    self._raise_error(response.status, raw_data)
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\elasticsearch\connection\base.py", line 330, in _raise_error
+    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(
+elasticsearch.exceptions.NotFoundError: NotFoundError(404, 'index_not_found_exception', 'no such index [post]', post, index_or_alias)
+2021-09-15 20:58:01,205 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:80]
+2021-09-15 20:58:10,299 ERROR: Exception on /search [GET] [in C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\main\routes.py", line 21, in search
+    posts, total = Post.search(g.search_form.q.data, page,current_app.config['POSTS_PER_PAGE'])
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\models.py", line 15, in search
+    ids, total = query_index(cls.__tablename__, expression, page, per_page)
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\search.py", line 19, in query_index
+    search = current_app.elasticsearch.search(
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\elasticsearch\client\utils.py", line 168, in _wrapped
+    return func(*args, params=params, headers=headers, **kwargs)
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\elasticsearch\client\__init__.py", line 1668, in search
+    return self.transport.perform_request(
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\elasticsearch\transport.py", line 458, in perform_request
+    raise e
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\elasticsearch\transport.py", line 419, in perform_request
+    status, headers_response, data = connection.perform_request(
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 277, in perform_request
+    self._raise_error(response.status, raw_data)
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\elasticsearch\connection\base.py", line 330, in _raise_error
+    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(
+elasticsearch.exceptions.NotFoundError: NotFoundError(404, 'index_not_found_exception', 'no such index [post]', post, index_or_alias)
+2021-09-15 21:06:46,627 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:80]
+2021-09-15 21:06:50,784 ERROR: Exception on /search [GET] [in C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py:1454]
+Traceback (most recent call last):
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\main\routes.py", line 21, in search
+    posts, total = Post.search(g.search_form.q.data, page,current_app.config['POSTS_PER_PAGE'])
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\models.py", line 15, in search
+    ids, total = query_index(cls.__tablename__, expression, page, per_page)
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\app\search.py", line 19, in query_index
+    search = current_app.elasticsearch.search(index=index, doc_type=index,body={'query':{'multi_match': {'query':query, 'fields':['*']}},        'from': (page -1) * per_page, 'size':per_page})
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\elasticsearch\client\utils.py", line 168, in _wrapped
+    return func(*args, params=params, headers=headers, **kwargs)
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\elasticsearch\client\__init__.py", line 1668, in search
+    return self.transport.perform_request(
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\elasticsearch\transport.py", line 458, in perform_request
+    raise e
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\elasticsearch\transport.py", line 419, in perform_request
+    status, headers_response, data = connection.perform_request(
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 277, in perform_request
+    self._raise_error(response.status, raw_data)
+  File "C:\Users\kushwaha\Documents\cs50 Web\microblog\venv\lib\site-packages\elasticsearch\connection\base.py", line 330, in _raise_error
+    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(
+elasticsearch.exceptions.NotFoundError: NotFoundError(404, 'index_not_found_exception', 'no such index [post]', post, index_or_alias)
+2021-09-15 21:15:23,653 INFO: Microblog startup [in C:\Users\kushwaha\Documents\cs50 Web\microblog\app\__init__.py:80]
